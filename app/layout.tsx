@@ -1,0 +1,29 @@
+import "./globals.css"
+import { Inter } from "next/font/google"
+import type React from "react"
+import type { Metadata } from "next"
+import MouseMoveEffect from "@/components/mouse-move-effect"
+
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata: Metadata = {
+  title: "ConvertFlow - Free Online File Converter",
+  description:
+    "Convert files between formats instantly. Support for images, documents, audio, and video. Fast, secure, and completely free online conversion tool.",
+    generator: 'v0.app'
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className="dark">
+      <body className={`${inter.className} bg-background text-foreground antialiased`}>
+        <MouseMoveEffect />
+        {children}
+      </body>
+    </html>
+  )
+}
